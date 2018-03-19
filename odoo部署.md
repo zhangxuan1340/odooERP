@@ -188,3 +188,4 @@ Oct 15 12:46:54 iZuf6jevtfmojh35fpwxb5Z systemd[1]: Started Odoo.
 ``` bash
 sudo systemctl stop odoo
 ```
+至此基本上Odoo已经全部安装完成了。
