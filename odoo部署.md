@@ -144,7 +144,7 @@ sudo ln -s /usr/local/bin/wkhtmltopdf /usr/bin
 sudo ln -s /usr/local/bin/wkhtmltoimage /usr/bin
 ```
 
-# Si:安装Services服务让系统自动启动
+# 四:安装Services服务让系统自动启动
 
 ``` bash
 sudo vi /lib/systemd/system/odoo.service
@@ -188,3 +188,4 @@ Oct 15 12:46:54 iZuf6jevtfmojh35fpwxb5Z systemd[1]: Started Odoo.
 ``` bash
 sudo systemctl stop odoo
 ```
+至此Odoo部署已经完成并且可以进行使用
