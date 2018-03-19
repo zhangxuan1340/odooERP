@@ -140,6 +140,9 @@ sudo apt-get install ttf-wqy-microhei -y
 wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.2.1/wkhtmltox-0.12.2.1_linux-trusty-amd64.deb
 
 sudo dpkg -i wkhtmltox-0.12.2.1_linux-trusty-amd64.deb   # 会提示要安装xfonts-75dpi 等，这时候用apt-get -f install会安装这2个依赖
+sudo mkdir Tools
+wget http://kr.archive.ubuntu.com/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb
+sudo dpkg -i libpng12-0_1.2.54-1ubuntu1_amd64.deb
 sudo ln -s /usr/local/bin/wkhtmltopdf /usr/bin 
 sudo ln -s /usr/local/bin/wkhtmltoimage /usr/bin
 ```
