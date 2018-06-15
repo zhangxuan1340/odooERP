@@ -21,13 +21,13 @@ su odoo
 ``` bash
 cd ~
 ```
-# One:更新系统依赖并克隆odoo源码
+# 更新系统依赖并克隆odoo源码
 <li>1.1 更新系统
 
 ``` bash
 sudo apt-get update     #注：16.04后-get可以省略
-sudo apt-get upgrade    #
-sudo apt-get install git
+sudo apt-get upgrade    #更新系统组件
+sudo apt-get install git #安装git，新版本默认安装git
 ```
 
 <font color=red>注:</font>每次更新完毕后,最好重启下服务器。
@@ -46,7 +46,7 @@ sudo npm install -g less
 git clone https://github.com/odoo/odoo.git -b 11.0 --depth=1 odoo11
 ```
 
-# Two:安装ERP所需依赖
+# 安装ERP所需依赖
 <li>2.1 安装pip
 
 ``` bash
@@ -75,7 +75,7 @@ cd ~/odoo11
 ```
 
 ``` bash
-从启动日志可以看到，会在当前用户根目录生成配置文件 .odoorc (这个配置文件第三步会用到)
+#从启动日志可以看到，会在当前用户根目录生成配置文件 .odoorc (这个配置文件第三步会用到)
 Using configuration file at /home/odoo/.odoorc
 ```
 
@@ -88,7 +88,7 @@ tcp        0      0 0.0.0.0:8069            0.0.0.0:*               LISTEN
 tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN     
 tcp        0      0 127.0.0.1:5432          0.0.0.0:*               LISTEN 
 ```
-# San:设置配置文件
+# 设置配置文件
 
 ``` bash
 sudo mkdir /etc/odoo
