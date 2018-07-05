@@ -1,4 +1,4 @@
-# odoo11进行Ubuntu系统的安装与部署
+# Ubuntu odoo部署
 * 创建用odoo 用于同一管理odoo进程与启动
 ``` bash
 sudo adduser odoo
