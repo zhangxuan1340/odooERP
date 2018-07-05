@@ -50,9 +50,13 @@ git clone https://github.com/odoo/odoo.git -b 11.0 --depth=1 odoo11
 <li>2.1 安装pip
 
 ``` bash
-sudo apt-get install python3-pip
+sudo apt-get install -y python3-pip
 ```
 ``` bash
+#通过requirements.txt安装
+cd odoo11
+sudo pip3 install -r requirements.txt
+#也可以复制以下命令进行安装。
 sudo pip3 install Babel decorator docutils ebaysdk feedparser gevent greenlet html2text Jinja2 lxml Mako MarkupSafe mock num2words ofxparse passlib Pillow psutil psycogreen psycopg2 pydot pyparsing PyPDF2 pyserial python-dateutil python-openid pytz pyusb PyYAML qrcode reportlab requests six suds-jurko vatnumber vobject Werkzeug XlsxWriter xlwt xlrd 
 ```
 
@@ -60,6 +64,7 @@ sudo pip3 install Babel decorator docutils ebaysdk feedparser gevent greenlet ht
 
 2.2 安装Postgresql数据库
 ``` bash
+sudo apt-get install -y postgresql
 sudo su - postgres
 createuser --createdb --username postgres --no-createrole --no-superuser --pwprompt odoo
 Enter password for new role: *****
