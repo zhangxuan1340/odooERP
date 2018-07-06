@@ -1,4 +1,17 @@
 # Ubuntu odoo部署
+<!-- TOC -->
+
+- [Ubuntu odoo部署](#ubuntu-odoo部署)
+- [创立用户](#创立用户)
+- [更新系统依赖并克隆odoo源码](#更新系统依赖并克隆odoo源码)
+- [安装ERP所需依赖](#安装erp所需依赖)
+- [设置配置文件](#设置配置文件)
+        - [简要说明:](#简要说明)
+            - [通过-c参数运行服务，我们可以检查配置的效果:](#通过-c参数运行服务我们可以检查配置的效果)
+- [安装Services服务让系统自动启动](#安装services服务让系统自动启动)
+
+<!-- /TOC -->
+# 创立用户
 * 创建用odoo 用于同一管理odoo进程与启动
 ``` bash
 sudo adduser odoo
@@ -154,7 +167,7 @@ sudo ln -s /usr/local/bin/wkhtmltopdf /usr/bin
 sudo ln -s /usr/local/bin/wkhtmltoimage /usr/bin
 ```
 
-# 四:安装Services服务让系统自动启动
+# 安装Services服务让系统自动启动
 
 ``` bash
 sudo vi /lib/systemd/system/odoo.service
