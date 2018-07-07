@@ -1,4 +1,20 @@
 # macOS 开发环境部署
+<!-- TOC -->
+
+- [macOS 开发环境部署](#macos-开发环境部署)
+- [环境要求](#环境要求)
+        - [安装Python](#安装python)
+        - [安装Nodejs](#安装nodejs)
+        - [安装Python虚拟环境](#安装python虚拟环境)
+        - [安装jpep库](#安装jpep库)
+        - [安装Wkhtmltopdf](#安装wkhtmltopdf)
+
+<!-- /TOC -->
+# 环境要求
+* 系统环境：macOS
+* Python版本：Python3.5.4
+* WKHTML版本：0.12.5
+* Xocde 安装最新版本
 
 macOS平台部署Odoo相当的简易提前布置好 [Brew](https://brew.sh)
 
@@ -30,6 +46,11 @@ sudo pip3 install virtualenv  #pip安装Virtualenv
 virtualenv env/odoo11 --python=python3.7  #最后的参数python3.7根据本机版本修改。
 source env/odoo11/bin/activate   #激活虚拟环境。
 pip3 install -r odoo11/requirements.txt  #获取Odoo11的依赖
+```
+
+### 安装jpep库
+``` bash
+brew install libjpeg
 ```
 
 ### 安装Wkhtmltopdf 

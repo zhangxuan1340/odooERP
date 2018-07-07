@@ -2,6 +2,7 @@
 <!-- TOC -->
 
 - [Ubuntu odoo部署](#ubuntu-odoo部署)
+- [环境要求](#环境要求)
 - [创立用户](#创立用户)
 - [更新系统依赖并克隆odoo源码](#更新系统依赖并克隆odoo源码)
 - [安装ERP所需依赖](#安装erp所需依赖)
@@ -11,6 +12,11 @@
 - [安装Services服务让系统自动启动](#安装services服务让系统自动启动)
 
 <!-- /TOC -->
+# 环境要求
+对于Odoo的要求
+  * 系统版本：Ubuntu
+  * Python：Python3.5.4
+  * 数据库版本：
 # 创立用户
 * 创建用odoo 用于同一管理odoo进程与启动
 ``` bash
@@ -196,7 +202,7 @@ sudo systemctl start odoo
 ``` bash
 sudo systemctl status odoo
 ```
-表示Acitve（runing）状态表示服务器已经正常启动。
+表示Acitve（runting）状态表示服务器已经正常启动。
 ``` baash
 ● odoo.service - Odoo
    Loaded: loaded (/lib/systemd/system/odoo.service; enabled; vendor preset: enabled)
