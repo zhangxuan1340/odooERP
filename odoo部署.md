@@ -15,7 +15,7 @@
 # 环境要求
 对于Odoo的要求
   * 系统版本：Ubuntu
-  * Python：Python3.5.4
+  * Python：Python3.6以下
   * 数据库版本：
 # 创立用户
 * 创建用odoo 用于同一管理odoo进程与启动
@@ -34,7 +34,7 @@ odoo    ALL=(ALL:ALL) ALL
 
 切换用户至odoo全程进入odoo用户进行操作完成整个步骤。
 ``` bash
-su odoo
+su - odoo
 ```
 进入odoo家目录默认系统是自动进入当前账户的家目录，注意观察命令行前 *～*当然也可以自行手工进入家目录
 ``` bash
@@ -88,7 +88,7 @@ sudo su - postgres
 createuser --createdb --username postgres --no-createrole --no-superuser --pwprompt odoo
 Enter password for new role: *****
 Enter it again:*****
-exit
+exit #最后使用exit进行退出
 ```
 
 2.3 进入odoo11目录生成配置文件
@@ -100,10 +100,11 @@ cd ~/odoo11
 
 ``` bash
 #从启动日志可以看到，会在当前用户根目录生成配置文件 .odoorc (这个配置文件第三步会用到)
-Using configuration file at /home/odoo/.odoorc
+Using configuration file at /home/odoo/.odoorc #观察启动日志
 ```
 
 ``` bash
+#开启新的终端查看进程
 ps aux |grep odoo
 odoo      1010  0.9  1.6 421168 66852 pts/0    Sl+  12:22   0:00 python3 ./odoo-bin -c /etc/odoo/odoo.conf
 ```
@@ -115,17 +116,17 @@ tcp        0      0 127.0.0.1:5432          0.0.0.0:*               LISTEN
 # 设置配置文件
 
 ``` bash
-sudo mkdir /etc/odoo
-sudo cp /home/odoo/.odoorc /etc/odoo/odoo.conf
-sudo chown -R odoo /etc/odoo
+sudo mkdir /etc/odoo #创建Odoo文件夹
+sudo cp /home/odoo/.odoorc /etc/odoo/odoo.conf #复制根目录配置文件到Odoo文件夹下并更名 odoo.conf
+sudo chown -R odoo /etc/odoo #给目录设置权限
 ```
 
 ``` bash
-sudo mkdir /var/log/odoo
+sudo mkdir /var/log/odoo  #创建Odoo log目录
 sudo chown odoo /var/log/odoo
-```
+``` 
 ``` bash
-sudo vim /etc/odoo/odoo.conf
+sudo vim /etc/odoo/odoo.conf #编辑Odoo配置文件
 ```
 ``` bash
 [options]
@@ -148,7 +149,7 @@ logrotate = True
 
 #### 通过-c参数运行服务，我们可以检查配置的效果:
 ``` bash
-./odoo-bin -c /etc/odoo/odoo.conf
+./odoo-bin -c /etc/odoo/odoo.conf #-c追加配置文件
 ```
 * 此时odoo完全无启动日志，所有日志均进入log文件。
 ``` bash
