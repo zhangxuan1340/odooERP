@@ -8,6 +8,7 @@
         - [安装Python虚拟环境](#安装python虚拟环境)
         - [安装jpep库](#安装jpep库)
         - [安装Wkhtmltopdf](#安装wkhtmltopdf)
+        - [安装PostgreSQL](#安装postgresql)
 
 <!-- /TOC -->
 # 环境要求
@@ -59,4 +60,10 @@ brew install libjpeg
 ### 安装Wkhtmltopdf 
 
 进入 [官网](https://wkhtmltopdf.org/downloads.html)选择系统版本进行下载安装。
+
+### 安装PostgreSQL
+
+``` bash
+brew install postgresql
+post
 

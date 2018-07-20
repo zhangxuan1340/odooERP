@@ -163,7 +163,7 @@ sudo apt-get install ttf-wqy-microhei -y
 * 安装所需Wkhtmltopdf
 ``` bash
 sudo mkdir Tools
-cd tools
+cd Tools
 wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.2.1/wkhtmltox-0.12.2.1_linux-trusty-amd64.deb
 
 sudo dpkg -i wkhtmltox-0.12.2.1_linux-trusty-amd64.deb   # 会提示要安装xfonts-75dpi 等，这时候用apt-get -f install会安装这2个依赖
@@ -177,7 +177,7 @@ sudo ln -s /usr/local/bin/wkhtmltoimage /usr/bin
 # 安装Services服务让系统自动启动
 
 ``` bash
-sudo vi /lib/systemd/system/odoo.service
+sudo vi /lib/systemd/system/odoo.service #注册Odoo服务
 ```
 ``` bash
 [Unit]
