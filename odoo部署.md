@@ -69,7 +69,7 @@ git clone https://github.com/odoo/odoo.git -b 11.0 --depth=1 odoo11
 <li>2.1 安装pip
 
 ``` bash
-sudo apt-get install -y python3-pip
+sudo apt-get install -y python3-pip libsasl2-dev build-essential libldap2-dev libsasl2-dev slapd ldap-utils python-tox  lcov valgrind
 ```
 ``` bash
 #通过requirements.txt安装
