@@ -3,9 +3,11 @@
 
 - [macOS 开发环境部署](#macos-开发环境部署)
 - [环境要求](#环境要求)
+    - [准备工作](#准备工作)
         - [安装Python](#安装python)
         - [安装Nodejs](#安装nodejs)
         - [安装Python虚拟环境](#安装python虚拟环境)
+        - [安装Odoo 所需Python依赖](#安装odoo-所需python依赖)
         - [安装jpep库](#安装jpep库)
         - [安装Wkhtmltopdf](#安装wkhtmltopdf)
         - [安装PostgreSQL](#安装postgresql)
@@ -17,9 +19,10 @@
 * WKHTML版本：0.12.5
 * Xocde 安装最新版本
 
+## 准备工作
 macOS平台部署Odoo相当的简易提前布置好 [Brew](https://brew.sh)
 
-打开 macOS 自带终端 部署Odoo。
+打开 macOS 自带终端 部署Brew。
 ``` bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
@@ -47,9 +50,11 @@ sudo npm install -g less
 sudo pip3 install virtualenv  #pip安装Virtualenv
 virtualenv env/odoo11 --python=python3.7  #最后的参数python3.7根据本机版本修改。
 source env/odoo11/bin/activate   #激活虚拟环境。
+```
+
+### 安装Odoo 所需Python依赖
+``` bash
 pip3 install -r odoo11/requirements.txt  #获取Odoo11的依赖
-#requirements中有部分软件需要二次编译，会报错要注释掉。
-pip3 install Babel decorator docutils ebaysdk feedparser gevent greenlet html2text Jinja2 lxml Mako MarkupSafe mock num2words ofxparse passlib Pillow psutil psycogreen psycopg2 pydot pyparsing PyPDF2 pyserial python-dateutil python-openid pytz pyusb PyYAML qrcode reportlab requests six suds-jurko vatnumber vobject Werkzeug XlsxWriter xlwt xlrd 
 ```
 
 ### 安装jpep库

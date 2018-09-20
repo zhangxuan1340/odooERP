@@ -15,7 +15,7 @@
 # 环境要求
 对于Odoo的要求
   * 系统版本：Ubuntu
-  * Python：Python3.6以下
+  * Python：Python3.6
   * 数据库版本：
 # 创立用户
 * 创建用odoo 用于同一管理odoo进程与启动
