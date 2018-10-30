@@ -32,7 +32,6 @@ odoo    ALL=(ALL:ALL) ALL
 wq!
 ```
 * 保存退出注意文件只读属性修改完成后记得追加 *!* 进行强制保存。
-
 切换用户至odoo全程进入odoo用户进行操作完成整个步骤。
 ``` bash
 su - odoo
