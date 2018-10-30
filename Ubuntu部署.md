@@ -29,6 +29,7 @@ sudo vim /etc/sudoers
 # User Privilege specification
 root    ALL=(ALL:ALL) ALL
 odoo    ALL=(ALL:ALL) ALL
+wq!
 ```
 * 保存退出注意文件只读属性修改完成后记得追加 *!* 进行强制保存。
 
@@ -64,7 +65,10 @@ sudo npm install -g less
 ``` bash
 git clone https://github.com/odoo/odoo.git -b 11.0 --depth=1 odoo11
 ```
+odoo 克隆所指定版本可以使用 -b 11.0 如果需要克隆 Odoo12 可以使用 -b 12.0
 
+那么如何确认自己可以克隆那个版本，我们可以查看Github里的版本库可以克隆的版本。
+<img style="border-radius: 10px;" src="static\img\部署手册\branch.png" >
 # 安装ERP所需依赖
 <li>2.1 安装pip
 
@@ -220,3 +224,4 @@ sudo systemctl stop odoo
 ```
 至此基本上Odoo已经全部安装完成了。
 至此Odoo部署已经完成并且可以进行使用
+
