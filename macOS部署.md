@@ -1,5 +1,6 @@
 # macOS 开发环境部署
-<!-- TOC -->autoauto- [macOS 开发环境部署](#macos-开发环境部署)auto- [环境要求](#环境要求)auto    - [准备工作](#准备工作)auto        - [安装Python](#安装python)auto        - [安装Nodejs](#安装nodejs)auto        - [安装Python虚拟环境](#安装python虚拟环境)auto        - [安装Odoo 所需Python依赖](#安装odoo-所需python依赖)auto        - [安装jpep库](#安装jpep库)auto        - [安装Wkhtmltopdf](#安装wkhtmltopdf)auto        - [安装PostgreSQL](#安装postgresql)autoauto<!-- /TOC -->
+
+
 # 环境要求
 * 系统环境：macOS
 * Python版本：Python3.6以下
@@ -25,6 +26,22 @@ git clone https://github.com/odoo/odoo.git -b 12.0 --depth=1 odoo12
 ``` bash
 brew install python3 python3-pip #macOS最新brew是Python3.7
 ```
+brew 安装均为最新版本。
+1. Brew 降级
+
+从[Homebrew-Core](https://github.com/Homebrew/homebrew-core/commits/master/Formula/python.rb)找到需要的版本。
+
+选择对应的 commit，点击 view 以后以 raw 模式打开，保存文件到本地。
+
+将下载的 python.rd 文件替换到下面的 
+
+/usr/local/Homebrew/Library/Taps/homebrew-core/Formula/python.rb
+
+直接安装
+``` bash
+brew install python
+```
+2. 通过官方下载 PKG
 通过官网链接进行下载[Python3.6](https://www.python.org/ftp/python/3.6.6/python-3.6.6-macosx10.9.pkg)版本
 ### 安装Nodejs
 ``` bash
@@ -79,3 +96,51 @@ Or, if you don't want/need a background service you can just run:
   pg_ctl -D /usr/local/var/postgres start
 ```
 默认 Brew 安装完成 PostgreSQL后 brew 会给你提示，可以通过两种方式启动PostgreSQL
+
+#### 创建 Virtual 虚拟环境
+
+熟知Python的朋友应该都是知道的虚拟环境，还不是同时多个环境下，某个版本的包同时会影响其他项目，我们通常的做法都是在项目的根目录外创建一个环境包来隔离每个项目之间的环境。
+
+``` bash
+pip3 install virtualenv   #安装Virtualenv
+cd /Volume/Data/Code/Python/Odoo #进入到项目外目录
+virtualenv --no-site-packages venv #创建一个环境目录，同时加上参数--no-stie-packages 保证 Python并不会复制当前已经安装的包。
+source venv/bin/activate #激活虚拟环境，激活成功后终端提示符变成 venv
+exit #退出
+```
+
+#### 环境依赖
+
+odoo依赖在克隆根目录下 requirements.txt 中，通常 Python 项目在根目录下都会有当前环境所需依赖。
+
+``` bash
+source venv/binactivate #激活虚拟环境
+pip3 install odoo12/requirements.txt #安装依赖通过文件进行读取，当前Uninstall 也是可以通过文件来批量卸载。
+```
+
+#### 生成配置文件
+
+``` bash
+./odoo-bin -s  #生成配置文件在～跟目录的odoorc
+cp ~/.odoorc odoo.conf
+```
+#### 配置参数文件
+``` conf
+logfile = /Volume/Data/Python/odoo/log/odoo.log
+logrotate = True
+```
+
+#### 运行Odoo
+
+``` bash
+./odoo-bin -c ./odoo.conf
+```
+通过访问
+https://localhost:8069/
+
+#### 问题解决
+ValueError: unknown locale: UTF-8
+需要编辑~/.bash_profile 加入
+两行
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
