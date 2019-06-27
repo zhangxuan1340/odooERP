@@ -1,5 +1,16 @@
 # macOS 开发环境部署
-<!-- TOC -->autoauto- [macOS 开发环境部署](#macos-开发环境部署)auto- [环境要求](#环境要求)auto    - [准备工作](#准备工作)auto        - [安装Python](#安装python)auto        - [安装Nodejs](#安装nodejs)auto        - [安装Python虚拟环境](#安装python虚拟环境)auto        - [安装Odoo 所需Python依赖](#安装odoo-所需python依赖)auto        - [安装jpep库](#安装jpep库)auto        - [安装Wkhtmltopdf](#安装wkhtmltopdf)auto        - [安装PostgreSQL](#安装postgresql)autoauto<!-- /TOC -->
+<!-- TOC -->
+[macOS 开发环境部署](#macos-开发环境部署)
+- [环境要求](#环境要求)
+- [准备工作](#准备工作)
+- [安装Python](#安装python)        
+- [安装Nodejs](#安装nodejs)
+- [安装Python虚拟环境](#安装python虚拟环境)
+- [安装Odoo 所需Python依赖](#安装odoo-所需python依赖)
+- [安装jpep库](#安装jpep库)        
+- [安装Wkhtmltopdf](#安装wkhtmltopdf)
+- [安装PostgreSQL](#安装postgresql)
+<!-- /TOC -->
 # 环境要求
 * 系统环境：macOS
 * Python版本：Python3.6以下
@@ -79,3 +90,5 @@ Or, if you don't want/need a background service you can just run:
   pg_ctl -D /usr/local/var/postgres start
 ```
 默认 Brew 安装完成 PostgreSQL后 brew 会给你提示，可以通过两种方式启动PostgreSQL
+
+
